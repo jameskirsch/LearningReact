@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="/node_modules/react/umd/react.production.min.js"></script>
+        <script src="/node_modules/react-dom/umd/react-dom.production.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <div id='other'></div> 
+        <script type="text/javascript">
+            var h1 = React.createElement('h1', 'null', 'Hello World!')
+            ReactDOM.render( h1, document.getElementById('root'));
+
+            var ele2 = React.createElement('div', 'null', 'other')
+            ReactDOM.render(ele2, document.getElementById('other'));
+        </script>
+    </body>
+</html>
