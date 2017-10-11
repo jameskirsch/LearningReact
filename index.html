@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="/node_modules/react/umd/react.production.min.js"></script>
-        <script src="/node_modules/react-dom/umd/react-dom.production.min.js"></script>
+        <script src="/node_modules/react/umd/react.development.js"></script>
+        <script src="/node_modules/react-dom/umd/react-dom.development.js"></script>
     </head>
     <body>
+        <div id="header"></div>
         <div id="root"></div>
-        <div id='other'></div> 
-        <script type="text/javascript">
-            var h1 = React.createElement('h1', 'null', 'Hello World!')
-            ReactDOM.render( h1, document.getElementById('root'));
+        <script type="text/javascript"> 
 
-            var ele2 = React.createElement('div', 'null', 'other')
-            ReactDOM.render(ele2, document.getElementById('other'));
+            ReactDOM.render(
+                React.createElement('h1', 'null', 'James Kirsch'),
+                document.getElementById('header')
+            )
+            let myHeader = React.createElement('h1', null, 'subtitle')
+            ReactDOM.render(
+                React.createElement('div', null, myHeader, myHeader),
+                document.getElementById('root')
+            )
+
         </script>
     </body>
 </html>
