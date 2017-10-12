@@ -1,8 +1,8 @@
-<!DOCTYPE html>
 <html>
     <head>
         <script src="/node_modules/react/umd/react.development.js"></script>
         <script src="/node_modules/react-dom/umd/react-dom.development.js"></script>
+        <script src="/scripts/main.js"></script>
     </head>
     <body>
         <div id="header"></div>
@@ -10,41 +10,26 @@
         <div id="getAnElementId"></div>
         <div id="componentClassId1"></div>
         <div id="Reused"></div>
-       
+        <div id="fooTest"></div>
+        
         <script type="text/javascript"> 
-            let myHeader = React.createElement('h1', null, 'James Kirsch')
-            class HeaderClass extends React.Component {
-                render() {
-                    console.log(this.props);
-                    console.log('IsFrozen:', Object.isFrozen())
-                    if(this.props.id === 'ember') {
-                        return React.createElement('div', this.props, 'ember');
-                    }
-                    else if(this.props.id === 'backbone') {
-                        return React.createElement('div', this.props, 'backbone');
-                    }
-                    else {
-                        return React.createElement('div', this.props, 'Other')
-                    }
-                }
-            }
             ReactDOM.render(
                 React.createElement(HeaderClass, null),
                 document.getElementById('componentClassId1')
             )
             ReactDOM.render(
-                React.createElement('h1', 'null', 'James Kirsch'),
+                React.createElement('h1', null, 'James Kirsch'),
                 document.getElementById('header')
             )
-            let thisHeader = React.createElement('h1', null, 'subtitle')
+            let thisHeader = React.createElement('h1', {}, 'subtitle')
             ReactDOM.render(
-                React.createElement('div', null, thisHeader, thisHeader),
+                React.createElement('div', {}, thisHeader, thisHeader),
                 document.getElementById('root')
             )
             var childElement1 = React.createElement('z', {prop1: 'prop1', prop2: 'prop2'}, 'a sample');
             
             var childElement2 = React.createElement('a', { href: 'http://google.com', id: 10 }, 'James Kirsch');
-            var parentElement = React.createElement('div', null, childElement1, childElement2);
+            var parentElement = React.createElement('div', {}, childElement1, childElement2);
             ReactDOM.render(
                 parentElement,
                 document.getElementById('getAnElementId')
@@ -55,15 +40,15 @@
                     null,
                     React.createElement(HeaderClass, {
                         id: 'ember',
-                        frameworkName: 'Ember.js',
+                        frameworkname: 'Ember.js',
                         title: 'A framework for web apps.'}),
                     React.createElement(HeaderClass, {
                         id: 'backbone',
-                        frameworkName: 'Backbone.js',
+                        frameworkname: 'Backbone.js',
                         title: 'Backbone.js web applications...'}),
                     React.createElement(HeaderClass, {
                         id: 'angular',
-                        frameworkName: 'Angular.js',
+                        frameworkname: 'Angular.js',
                         title: 'JavaScript MVW Framework'})
                     ),
                     document.getElementById('Reused')
