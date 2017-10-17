@@ -33,6 +33,8 @@ class HelloWorld extends React.Component {
             <a href="http://google.com">Google</a>
             <h1>{this.props.prop1} Showing from transpiled JSX</h1> 
             <h1>{this.props.prop2} Showing from transpiled JSX</h1>
+            <span style={{borderColor: 'blue', borderWidth: 1, borderStyle: 'solid' }}>Border1</span>
+            <span style={{border: '1px red solid'}}>Border2</span>
         </div>)
     }
 }

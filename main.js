@@ -51,6 +51,16 @@ class HelloWorld extends React.Component {
                 null,
                 this.props.prop2,
                 ' Showing from transpiled JSX'
+            ),
+            React.createElement(
+                'span',
+                { style: { borderColor: 'blue', borderWidth: 1, borderStyle: 'solid' } },
+                'Border1'
+            ),
+            React.createElement(
+                'span',
+                { style: { border: '1px red solid' } },
+                'Border2'
             )
         );
     }
