@@ -15,12 +15,17 @@ class MyJsxTestClass extends React.Component {
 ReactDOM.render(React.createElement(MyJsxTestClass, null), document.getElementById('jsxStuff'));
 class ProfileLink extends React.Component {
     render() {
-        return React.createElement(
-            'a',
-            { href: this.props.url,
-                title: this.props.label,
-                target: '_blank' },
-            'Profile'
+        // A non JSX suggestion for conditional logic
+        return (
+            //use ternary/ or {}, IIFE type logic in here
+            React.createElement(
+                'a',
+                { href: this.props.url,
+                    title: this.props.label,
+                    target: '_blank' },
+                'Profile'
+            ) /*0*/
+
         );
     }
 }

@@ -12,11 +12,13 @@ ReactDOM.render(
 )
 class ProfileLink extends React.Component {
     render() {
+        // A non JSX suggestion for conditional logic
         return (
+            //use ternary/ or {}, IIFE type logic in here
             <a href={this.props.url}
                title={this.props.label}
                target = "_blank" >Profile
-            </a>
+            </a>/*0*/
         )
     }
 }
@@ -31,8 +33,7 @@ class HelloWorld extends React.Component {
             <a href="http://google.com">Google</a>
             <h1>{this.props.prop1} Showing from transpiled JSX</h1> 
             <h1>{this.props.prop2} Showing from transpiled JSX</h1>
-        </div>
-       )
+        </div>)
     }
 }
 ReactDOM.render(
