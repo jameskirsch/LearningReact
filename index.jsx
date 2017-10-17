@@ -2,7 +2,7 @@ let thisReactElement = <h1>TestMyJsx</h1>
 class MyJsxTestClass extends React.Component {
     render() {
         return <div>
-            Try it
+            Try it!! finally, a dynamic build process
         </div> 
     }
 }
@@ -17,7 +17,7 @@ class ProfileLink extends React.Component {
             //use ternary/ or {}, IIFE type logic in here
             <a href={this.props.url}
                title={this.props.label}
-               target = "_blank" >Profile
+               target = "_blank" >Profiles
             </a>/*0*/
         )
     }

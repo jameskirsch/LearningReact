@@ -8,7 +8,7 @@ class MyJsxTestClass extends React.Component {
         return React.createElement(
             'div',
             null,
-            'Try it'
+            'Try it!! finally, a dynamic build process'
         );
     }
 }
@@ -23,7 +23,7 @@ class ProfileLink extends React.Component {
                 { href: this.props.url,
                     title: this.props.label,
                     target: '_blank' },
-                'Profile'
+                'Profiles'
             ) /*0*/
 
         );
