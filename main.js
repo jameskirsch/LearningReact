@@ -8,7 +8,7 @@ class MyJsxTestClass extends React.Component {
         return React.createElement(
             'div',
             null,
-            'Try it!! finally, a dynamic build process'
+            'Try it!! finally, a dynamic build process!!!'
         );
     }
 }
@@ -22,11 +22,10 @@ class ProfileLink extends React.Component {
                 'a',
                 { href: this.props.url,
                     title: this.props.label,
-                    target: '_blank' },
+                    key: this.props.id },
                 'Profiles ',
                 ' '
-            ) /*0*/
-
+            )
         );
     }
 }
@@ -34,38 +33,17 @@ ReactDOM.render(React.createElement(ProfileLink, null), document.getElementById(
 class HelloWorld extends React.Component {
     render() {
         var x = 10;
-        var i = 0;
+        var id = 1;
         return React.createElement(
             'div',
             this.props,
-            [...Array(10)].map((x, i) => React.createElement(ProfileLink, { key: i })),
-            React.createElement(
-                'a',
-                { href: 'http://google.com' },
-                'Google'
-            ),
-            React.createElement(
-                'h1',
-                null,
-                this.props.prop1,
-                ' Showing from transpiled JSX1'
-            ),
-            React.createElement(
-                'h1',
-                null,
-                this.props.prop2,
-                ' Showing from transpiled JSX2'
-            ),
-            React.createElement(
-                'span',
-                { style: { borderColor: 'blue', borderWidth: 1, borderStyle: 'solid' } },
-                'Border1'
-            ),
-            React.createElement(
-                'span',
-                { style: { border: '1px red solid' } },
-                'Border2'
-            )
+            [...Array(10)].map((x, id) => React.createElement(
+                'div',
+                { key: 'container' + id },
+                React.createElement(ProfileLink, { key: 'profileElement' + id }),
+                id,
+                React.createElement('br', null)
+            ))
         );
     }
 }
@@ -111,3 +89,25 @@ ReactDOM.render(React.createElement('div', null, React.createElement(HeaderClass
     id: 'angular',
     frameworkname: 'Angular.js',
     title: 'JavaScript MVW Framework' })), document.getElementById('Reused'));
+
+class Clock extends React.Component {
+    constructor(props) {
+        super(props);
+
+        //initializing states (confine to here in the constructor)
+        this.state = {
+            name: 'James Kirsch',
+            hobbies: ['Programming', 'Reading', 'Living'],
+            currentTime: new Date().toLocaleString()
+        };
+    }
+    render() {
+        return React.createElement(
+            'div',
+            null,
+            'My Time ',
+            this.state.currentTime
+        );
+    }
+}
+ReactDOM.render(React.createElement(Clock, null), document.getElementById('clock'));

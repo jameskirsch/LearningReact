@@ -17,6 +17,19 @@
     "presets": ["babel-preset-react"]
   },
   "scripts": {
+    "prepublish": "echo \"from prepublish\"",
+    "vscode:prepublish": "echo \"from prepublish vscode\"",
+    "publish": "echo \"from publish\"",
+    "prepack": "echo \"from prepack\"",
+    "postpack": "echo \"from postpack\"",
+    "postpublish": "echo \"from post publish\"",
+    "preinstall": "echo \"from pre install\"",
+    "install": "echo \"from install\"",
+    "preuninstall": "echo \"from pre-uninstall\"",
+    "uninstall": "echo \"from uninstall\"",
+    "postuninstall": "echo \"from postuninstall\"",
+    "preversion": "echo \"from preversion\"",
+    "postinstall": "echo \"from prepublush\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./node_modules/.bin/babel ./index.jsx --out-file main.js --watch"
   },
