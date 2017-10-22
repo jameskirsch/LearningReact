@@ -122,7 +122,6 @@ ReactDOM.render(
 class Clock extends React.Component {
     constructor(props) {
         super(props)
-
         //initializing states (confine to here in the constructor)
         this.state = {
             name: 'James Kirsch',
@@ -133,9 +132,25 @@ class Clock extends React.Component {
             ],
             currentTime: (new Date()).toLocaleString()
         }
+        this.launchClock()
+    }
+    launchClock() {
+        setInterval(() => {
+            console.log('updating the state');
+            // this.setState will trigger render
+            this.setState({
+                currentTime: (new Date()).toLocaleString()
+            })
+        }, 1000)
     }
     render() {
-        return <div>My Time {this.state.currentTime}</div>
+        //console.log('Clock render')
+        return (
+            <div>Time: {this.state.currentTime}
+                <br /> {
+                this.state.hobbies[Math.floor(Math.random()*this.state.hobbies.length)]}
+            </div>
+        )
     }
 }
 ReactDOM.render(
