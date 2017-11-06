@@ -1,3 +1,4 @@
+
 let thisReactElement = React.createElement(
     'h1',
     null,
@@ -8,7 +9,7 @@ class MyJsxTestClass extends React.Component {
         return React.createElement(
             'div',
             null,
-            'Try it!! finally, a dynamic build process!!!'
+            'Try it!! finally, a dynamic build processs!!!'
         );
     }
 }
@@ -188,3 +189,26 @@ class Clock extends React.Component {
     }
 }
 ReactDOM.render(React.createElement(Clock, null), document.getElementById('clock'));
+
+class Timer extends React.Component {
+    constructor(props) {
+        super(props);
+        this.setState = {
+            time: new Date().toLocaleString()
+        };
+    }
+
+    render() {
+        return React.createElement(
+            'div',
+            null,
+            React.createElement(
+                'p',
+                null,
+                'Giving a Timer:'
+            ),
+            this.setState.time
+        );
+    }
+}
+ReactDOM.render(React.createElement(Timer, null), document.getElementById('Timer'));

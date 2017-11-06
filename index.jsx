@@ -1,8 +1,9 @@
+
 let thisReactElement = <h1>TestMyJsx</h1>
 class MyJsxTestClass extends React.Component {
     render() {
         return <div>
-            Try it!! finally, a dynamic build process!!!
+              Try it!! finally, a dynamic build processs!!!
         </div> 
     }
 }
@@ -33,7 +34,7 @@ class HelloWorld extends React.Component {
        return(
          <div {...this.props}>
             {[...Array(10)].map((x, id) =>
-            <div key={('container' + id)}>
+          <div key={('container' + id)}>
                 <ProfileLink key={('profileElement' + id)}/>{id}
                 <br/>
             </div>
@@ -102,7 +103,7 @@ ReactDOM.render(
     React.createElement(
         'div',
         null,
-        React.createElement(HeaderClass, {
+    React.createElement(HeaderClass, {
             id: 'ember',
             frameworkname: 'Ember.js',
             title: 'A framework for web apps.'}),
@@ -198,10 +199,6 @@ class Clock extends React.Component {
             {StatelessFunctionSyntax()}
             {StatelessFunctionSyntaxEx2()}
             {StatelessExample4()}
-            {
-            //    StatelessFunctionSyntax3()
-           
-            }
             <br /> 
             {
                 this.state.hobbies[Math.floor(Math.random()*this.state.hobbies.length)]
@@ -215,5 +212,25 @@ ReactDOM.render(
     document.getElementById('clock')
 )
 
+class Timer extends React.Component {
+    constructor(props) {
+        super(props) 
+        this.setState = {
+            time: (new Date()).toLocaleString()
+        }
+    }
+
+    render() {
+        return (
+            <div><p>Giving a Timer:</p>{ this.setState.time}</div>
+        )
+    }
+}
+ReactDOM.render(
+    <Timer/>,
+    document.getElementById('Timer')
+)
 
 
+
+    
